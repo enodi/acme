@@ -1,0 +1,26 @@
+.sidebar {
+  border-right: 1px solid $light-grey;
+  height: 100vh;
+  background-color: $white;
+  width: 450px;
+  padding: $m-size 0;
+}
+
+.sidebar__top-section {
+  padding: 0 $m-size;
+  margin-bottom: $m-size;
+
+  > div {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  div:first-child {
+    margin-bottom: 1rem;
+  }
+}
+
+.sidebar__listItem {
+  overflow-y: auto;
+  height: 100%;
+}

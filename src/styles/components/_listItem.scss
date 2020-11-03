@@ -1,0 +1,50 @@
+.list-item {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #d1d1d1;
+  padding: 0.3rem $m-size;
+  align-items: center;
+  cursor: pointer;
+}
+
+.list-item:first-child {
+  border-top: 1px solid #d1d1d1;
+}
+
+.list-item__user-section {
+  align-self: center;
+  width: 70%;
+  margin: 0 0.7rem;
+}
+
+.list-item__profile-img {
+  width: 40px;
+  height: 40px;
+  background-color: $light-grey;
+  border-radius: 50%;
+}
+
+.list-item__name {
+  font-size: 0.8rem;
+  color: $dark-grey;
+}
+
+.list-item__message,
+.list-item__time-sent {
+  font-size: 0.7rem;
+  color: #bbbbbb;
+}
+
+.list-item__favourites-section {
+  align-self: center;
+}
+
+.list-item__star {
+  width: 18px;
+  height: 18px;
+}
+
+.list-item--selected {
+  background-color: #f2f2f2;
+  border-left: 3px solid $dark-grey;
+}

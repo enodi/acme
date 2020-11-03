@@ -1,0 +1,33 @@
+.chat {
+  display: flex;
+  height: 100vh;
+  width: 100%;
+  overflow-y: hidden;
+}
+
+.chat-screen {
+  background-color: $off-white;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.chat-screen__info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+  text-align: center;
+
+  h1 {
+    font-size: 1.3rem;
+    color: $dark-grey;
+  }
+
+  p {
+    font-size: 0.9rem;
+    color: $dark-grey;
+  }
+}
