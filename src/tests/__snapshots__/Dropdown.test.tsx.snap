@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render Dropdown component correctly 1`] = `
+<select
+  className="dropdown"
+  onChange={[MockFunction]}
+  value="isFavorite"
+>
+  <option
+    value="conversations"
+  >
+    All conversations
+  </option>
+  <option
+    value="isFavorite"
+  >
+    Favourites
+  </option>
+</select>
+`;

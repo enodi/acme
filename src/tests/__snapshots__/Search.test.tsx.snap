@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render Search component correctly 1`] = `
+<input
+  className="search"
+  onChange={[MockFunction]}
+  placeholder="Search for a new chat..."
+/>
+`;

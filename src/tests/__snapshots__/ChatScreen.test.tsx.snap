@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render ChatScreen component correctly 1`] = `
+<section
+  className="chat-screen"
+>
+  <ChatConversation
+    conversation={
+      Object {
+        "email": "krotte0@webmd.com",
+        "firstName": "Kirby",
+        "id": 1,
+        "isFavorite": true,
+        "isSelected": true,
+        "lastName": "Rotte",
+        "messages": Array [
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+        ],
+      }
+    }
+  />
+  <InputField
+    handleKeyDown={[MockFunction]}
+    messageText="Lorem ipsum dolor sit amet, consectetur adipiscing elit"
+    onTextChange={[MockFunction]}
+  />
+</section>
+`;

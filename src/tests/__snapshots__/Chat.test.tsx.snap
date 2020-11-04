@@ -1,0 +1,32 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render Chat component correctly 1`] = `
+<div
+  className="wrapper"
+>
+  <Header
+    selectedItem={Object {}}
+    toggleSidebar={[Function]}
+  />
+  <div
+    className="chat"
+  >
+    <Sidebar
+      favouriteConversation="conversations"
+      filterByFullname={[Function]}
+      filterFavourite={[Function]}
+      handleSelected={[Function]}
+      toggle={false}
+      toggleConversationType={[Function]}
+      userData={Array []}
+    />
+    <ChatScreen
+      conversation={Object {}}
+      handleKeyDown={[Function]}
+      messageText=""
+      onTextChange={[Function]}
+      selectedItem={Object {}}
+    />
+  </div>
+</div>
+`;

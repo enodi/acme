@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render List component correctly 1`] = `
+<div>
+  <ListItem
+    handleSelected={[MockFunction]}
+    item={
+      Object {
+        "email": "krotte0@webmd.com",
+        "firstName": "Kirby",
+        "id": 1,
+        "isFavorite": true,
+        "isSelected": true,
+        "lastName": "Rotte",
+        "messages": Array [
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+        ],
+      }
+    }
+    key="list-item-1"
+    toggleConversationType={[MockFunction]}
+  />
+</div>
+`;

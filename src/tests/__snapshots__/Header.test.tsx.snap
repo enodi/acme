@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render Header component correctly 1`] = `
+<header
+  className="header"
+>
+  <ForwardRef(SvgHamburger)
+    className="header__icon"
+    onClick={[MockFunction]}
+  />
+  <span>
+    Kirby
+     
+    Rotte
+  </span>
+</header>
+`;

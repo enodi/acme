@@ -1,0 +1,40 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render ListItem component correctly 1`] = `
+<div
+  className="list-item list-item--selected"
+  onClick={[Function]}
+>
+  <div
+    className="list-item__profile-img"
+  />
+  <div
+    className="list-item__user-section"
+  >
+    <h4
+      className="list-item__name"
+    >
+      Kirby Rotte
+    </h4>
+    <p
+      className="list-item__message"
+    >
+      Lorem Ipsum
+    </p>
+  </div>
+  <div
+    className="list-item__favourites-section"
+  >
+    <p
+      className="list-item__time-sent"
+    >
+      1h
+    </p>
+    <ForwardRef(SvgStar)
+      className="list-item__star"
+      fill="#333333"
+      onClick={[Function]}
+    />
+  </div>
+</div>
+`;

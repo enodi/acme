@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render ChatConversation component correctly 1`] = `
+<div
+  className="chat-screen__area"
+>
+  <span
+    className="chat-screen__bubble"
+    key="message-0"
+  >
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit
+  </span>
+</div>
+`;

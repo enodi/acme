@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render InputField component correctly 1`] = `
+<input
+  className="input-field"
+  onChange={[MockFunction]}
+  onKeyDown={[MockFunction]}
+  placeholder="Send a message"
+  value="Lorem ipsum dolor sit amet, consectetur adipiscing elit"
+/>
+`;
