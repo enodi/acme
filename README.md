@@ -1,47 +1,58 @@
-# Getting Started with Create React App
+# Acme Project
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Project link: https://acme-mu.vercel.app/
 
-## Available Scripts
+## Application setup
 
-In the project directory, you can run:
+- Clone the application `git clone https://github.com/enodi/acme.git`
 
-### `yarn start`
+* Open a new tab on your terminal
+* Navigate to the application root directory e.g `$ cd acme`
+  - run `yarn install` to install project dependencies
+  - run `yarn start` to start the react application
+* Navigate to the app on your [browser](http://localhost:3000)
+* Enjoy!
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Test
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+To run all tests use the command: `yarn test`
 
-### `yarn test`
+## Discussion
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+I used the following technologies and tools: html, scss, react, typescript, react-router-dom, node-sass, jest, enzyme-to-json, and enzyme.
+I used create-react-app to generate the scaffolding for the application.
 
-### `yarn build`
+### Requirements
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+#### Using the wireframe, and mock data provided, build a chat screen that does the following:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- displays the users first name and last name
+- allow for flagging a conversation (via toggling star icon)
+- should allow searching to filter based on the full name
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+I built a listItem component to display a user's firstName and lastName. The listItem component contains other elements such as the star icon, a dummy image, and the time the last message was sent. The star icon allows users flag a conversation by toggling the icon.
 
-### `yarn eject`
+The listItem components is nested within the List component which houses all listItems(i.e all users details).
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+I also built a search component that allow users search by full name. Results are filtered based on the search parameter.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Bonuses
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+#### Filter based on conversation type
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+I built a dropdown component that filters results based on the conversation type i.e favourites conversation or all conversations
 
-## Learn More
+#### Added a chat environment
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+I also built a chat component that allows clicking on a user, to enable chatting/sending of messages.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
-# acme
+#### Responsive application
+
+I ensured the application is responsive by using media queries to target small and large devices
+
+### Further Enhancements
+
+- Ability to add new users/conversations
+- Implement the follow up feature
+- All users/conversations shouldn't be displayed at once on the sidebar(limit number of users/converations to be displayed)
+- Ability to remove a conversation from the sidebar
