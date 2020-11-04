@@ -4,6 +4,10 @@
   background-color: $white;
   width: 450px;
   padding: $m-size 0;
+
+  @media only screen and (max-width: 980px) {
+    display: none;
+  }
 }
 
 .sidebar__top-section {
@@ -23,4 +27,26 @@
 .sidebar__listItem {
   overflow-y: auto;
   height: 100%;
+}
+
+.header--show-sidebar {
+  display: block;
+  -webkit-animation: slide 0.5s forwards;
+  -webkit-animation-delay: 2s;
+  animation: slide 0.5s forwards;
+  animation-delay: 2s;
+  position: fixed;
+  width: 350px;
+}
+
+@-webkit-keyframes slide {
+  100% {
+    left: 0;
+  }
+}
+
+@keyframes slide {
+  100% {
+    left: 0;
+  }
 }

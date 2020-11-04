@@ -1,18 +1,30 @@
 import React from "react";
 
 import ListItem from "./ListItem";
+import { userDataFormat } from "../models";
 
-const List: React.FC<{
-  userData: any;
-  toggleConversationType: any;
-}> = ({ userData, toggleConversationType }) => (
+interface ListProps {
+  userData: userDataFormat[];
+  toggleConversationType: (
+    event: React.MouseEvent<SVGSVGElement>,
+    id: number
+  ) => void;
+  handleSelected: (selected: userDataFormat) => void;
+}
+
+const List: React.FC<ListProps> = ({
+  userData,
+  toggleConversationType,
+  handleSelected,
+}) => (
   <div>
     {userData.length > 0 &&
-      userData.map((item: any) => (
+      userData.map((item: userDataFormat) => (
         <ListItem
           key={`list-item-${item.id}`}
           item={item}
           toggleConversationType={toggleConversationType}
+          handleSelected={handleSelected}
         />
       ))}
   </div>

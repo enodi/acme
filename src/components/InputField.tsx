@@ -1,10 +1,16 @@
 import React from "react";
 
-const InputField: React.FC<{
-  handleKeyDown: any;
-  onTextChange: any;
+interface InputFieldProps {
+  handleKeyDown: (event: any) => void;
+  onTextChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
   messageText: string;
-}> = ({ handleKeyDown, onTextChange, messageText }) => (
+}
+
+const InputField: React.FC<InputFieldProps> = ({
+  handleKeyDown,
+  onTextChange,
+  messageText,
+}) => (
   <input
     placeholder="Send a message"
     className="input-field"

@@ -1,6 +1,10 @@
 import React from "react";
 
-const Search: React.FC<{ filterByFullname: any }> = ({ filterByFullname }) => (
+interface SearchProps {
+  filterByFullname: (event: React.ChangeEvent<HTMLInputElement>) => void;
+}
+
+const Search: React.FC<SearchProps> = ({ filterByFullname }) => (
   <input
     placeholder="Search for a new chat..."
     className="search"

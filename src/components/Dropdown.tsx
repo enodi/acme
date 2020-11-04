@@ -1,9 +1,14 @@
 import React from "react";
 
-const Dropdown: React.FC<{
-  filterFavourite: any;
+interface DropdownProps {
+  filterFavourite: (event: React.ChangeEvent<HTMLSelectElement>) => void;
   favouriteConversation: string;
-}> = ({ filterFavourite, favouriteConversation }) => (
+}
+
+const Dropdown: React.FC<DropdownProps> = ({
+  filterFavourite,
+  favouriteConversation,
+}) => (
   <select
     className="dropdown"
     value={favouriteConversation}

@@ -2,15 +2,20 @@ import React, { useState, useEffect } from "react";
 
 import Sidebar from "../components/Sidebar";
 import ChatScreen from "../components/ChatScreen";
+import Header from "../components/Header";
 import data from "../MOCK_DATA.json";
+import { userDataFormat } from "../models";
 
 const Chat: React.FC = () => {
   const [favouriteConversation, setFavouriteConversation] = useState(
     "conversations"
   );
   const [userData, setUserData] = useState<any>([]);
-  const [messages, setMessages] = useState<any>([]);
   const [messageText, setMessageText] = useState("");
+  const [toggle, setToggle] = useState(false);
+  const [selectedItem, setSelectedItem] = useState<any>({});
+  const [messages, setMessages] = useState<any>([]);
+  const [conversation, setConversation] = useState<any>({});
 
   useEffect(() => {
     setUserData(data);
@@ -20,7 +25,7 @@ const Chat: React.FC = () => {
     if (event.target.value === "isFavorite") {
       setFavouriteConversation(event.target.value);
       const favourites = userData.filter(
-        (item: any) => item.isFavorite === true
+        (item: userDataFormat) => item.isFavorite === true
       );
       setUserData(favourites);
     } else {
@@ -44,12 +49,12 @@ const Chat: React.FC = () => {
   };
 
   const toggleConversationType = (
-    event: React.ChangeEvent<HTMLImageElement>,
+    event: React.MouseEvent<SVGSVGElement>,
     id: number
   ) => {
     event.stopPropagation();
-    const updatedData: any[] = [];
-    userData.reduce((acc: any, item: any) => {
+    const updatedData: userDataFormat[] = [];
+    userData.reduce((acc: {}, item: userDataFormat) => {
       if (item.id === id) {
         item.isFavorite = !item.isFavorite;
       }
@@ -58,36 +63,65 @@ const Chat: React.FC = () => {
     setUserData(updatedData);
   };
 
+  const onTextChange = (event: React.ChangeEvent<HTMLInputElement>) =>
+    setMessageText(event.target.value);
+
+  const toggleSidebar = () => setToggle(!toggle);
+
+  const hideOverlay = () => setToggle(false);
+
+  const handleSelected = (selected: userDataFormat) => {
+    const isSelected = false;
+    const updatedData: userDataFormat[] = [];
+    setMessages([]);
+    setConversation({});
+
+    userData.reduce((acc: {}, item: userDataFormat) => {
+      if (selected.id === item.id) {
+        item.isSelected = !isSelected;
+        setSelectedItem(item);
+      } else {
+        item.isSelected = isSelected;
+      }
+      updatedData.push(item);
+    }, {});
+    setUserData(updatedData);
+  };
+
   const handleKeyDown = (event: any) => {
-    const newMessage = [];
+    const chat: string[] = [];
     if (event.key === "Enter") {
-      newMessage.push(event.target.value);
-      setMessages(newMessage);
+      chat.push(event.target.value);
+      setMessages([...messages, ...chat]);
+      selectedItem.messages = [...messages, ...chat];
+      setConversation(selectedItem);
       setMessageText("");
     }
   };
 
-  const onTextChange = (event: any) => setMessageText(event.target.value);
-
   return (
-    <>
-      <header>hello</header>
+    <div className="wrapper">
+      <Header toggleSidebar={toggleSidebar} selectedItem={selectedItem} />
       <div className="chat">
+        {toggle && <div className="overlay" onClick={hideOverlay} />}
         <Sidebar
           userData={userData}
           toggleConversationType={toggleConversationType}
           filterByFullname={filterByFullname}
           filterFavourite={filterFavourite}
           favouriteConversation={favouriteConversation}
+          toggle={toggle}
+          handleSelected={handleSelected}
         />
         <ChatScreen
+          selectedItem={selectedItem}
+          conversation={conversation}
           handleKeyDown={handleKeyDown}
-          messages={messages}
           onTextChange={onTextChange}
           messageText={messageText}
         />
       </div>
-    </>
+    </div>
   );
 };
 

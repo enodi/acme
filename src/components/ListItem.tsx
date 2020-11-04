@@ -1,27 +1,28 @@
-import React, { useState } from "react";
+import React from "react";
 
 import { ReactComponent as Star } from "../assets/star.svg";
+import { userDataFormat } from "../models";
 
-const ListItem: React.FC<{
-  toggleConversationType: any;
-  item: any;
-}> = ({ toggleConversationType, item }) => {
-  const [isSelected, setIsSelected] = useState(false);
+interface ListItemProps {
+  toggleConversationType: (
+    event: React.MouseEvent<SVGSVGElement>,
+    id: number
+  ) => void;
+  item: userDataFormat;
+  handleSelected: (selected: userDataFormat) => void;
+}
 
-  const toggleMessageField = () => {
-    setIsSelected(!isSelected);
-    localStorage.setItem(
-      "selectedId",
-      JSON.stringify({ id: item.id, selected: true })
-    );
-  };
-
+const ListItem: React.FC<ListItemProps> = ({
+  toggleConversationType,
+  item,
+  handleSelected,
+}) => {
   return (
     <div
       className={`list-item ${
-        isSelected ? "list-item--selected" : "list-item--not-selected"
+        item.isSelected ? "list-item--selected" : "list-item--not-selected"
       }`}
-      onClick={toggleMessageField}
+      onClick={() => handleSelected(item)}
     >
       <div className="list-item__profile-img" />
       <div className="list-item__user-section">
