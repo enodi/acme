@@ -4,11 +4,14 @@ exports[`should render ChatConversation component correctly 1`] = `
 <div
   className="chat-screen__area"
 >
-  <span
-    className="chat-screen__bubble"
+  <div
     key="message-0"
   >
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit
-  </span>
+    <span
+      className="chat-screen__bubble"
+    >
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit
+    </span>
+  </div>
 </div>
 `;
