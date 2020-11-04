@@ -11,9 +11,9 @@ const ChatConversation: React.FC<ChatConversationProps> = ({
 }) => (
   <div className="chat-screen__area">
     {conversation.messages.map((message: string, index: number) => (
-      <span key={`message-${index}`} className="chat-screen__bubble">
-        {message}
-      </span>
+      <div key={`message-${index}`}>
+        <span className="chat-screen__bubble">{message}</span>
+      </div>
     ))}
   </div>
 );

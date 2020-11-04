@@ -58,7 +58,7 @@ const Chat: React.FC = () => {
       if (item.id === id) {
         item.isFavorite = !item.isFavorite;
       }
-      updatedData.push(item);
+      return updatedData.push(item);
     }, {});
     setUserData(updatedData);
   };
@@ -83,7 +83,7 @@ const Chat: React.FC = () => {
       } else {
         item.isSelected = isSelected;
       }
-      updatedData.push(item);
+      return updatedData.push(item);
     }, {});
     setUserData(updatedData);
   };
