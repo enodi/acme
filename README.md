@@ -30,9 +30,9 @@ I used create-react-app to generate the scaffolding for the application.
 - allow for flagging a conversation (via toggling star icon)
 - should allow searching to filter based on the full name
 
-I built a listItem component to display a user's firstName and lastName. The listItem component contains other elements such as the star icon, a dummy image, and the time the last message was sent. The star icon allows users flag a conversation by toggling the icon.
+I built a ListItem component to display a user's firstName and lastName. The ListItem component contains other elements such as the star icon, a dummy image, and the time the last message was sent. The star icon allows users flag a conversation by toggling the icon.
 
-The listItem components is nested within the List component which houses all listItems(i.e all users details).
+The ListItem components is nested within the List component which houses all ListItems(i.e all users details).
 
 I also built a search component that allow users search by full name. Results are filtered based on the search parameter.
 
@@ -54,5 +54,5 @@ I ensured the application is responsive by using media queries to target small a
 
 - Ability to add new users/conversations
 - Implement the follow up feature
-- All users/conversations shouldn't be displayed at once on the sidebar(limit number of users/converations to be displayed)
+- All users/conversations shouldn't be displayed at once on the sidebar(limit number of users/conversations to be displayed)
 - Ability to remove a conversation from the sidebar
