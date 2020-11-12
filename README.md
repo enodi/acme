@@ -13,7 +13,7 @@ Project link: https://acme-mu.vercel.app/
 * Navigate to the app on your [browser](http://localhost:3000)
 * Enjoy!
 
-## Test
+## How to Test
 
 To run all tests use the command: `yarn test`
 
